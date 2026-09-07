@@ -103,8 +103,8 @@ export default function Portfolio() {
             <p className="aboutme-summary">
               Full-Stack Developer and BCA graduate with hands-on experience in
               Node.js, Java Spring Boot and React. Delivered cloud-deployed,
-              production-grade applications across two internships and
-              independent projects. Comfortable working across the full stack.
+              production-grade applications, Comfortable working across the full
+              stack.
             </p>
           </div>
         </Reveal>
