@@ -1,4 +1,5 @@
 /* App.css */
+
 .view {
   height: 100vh;
   width: 100vw;
@@ -82,6 +83,7 @@
   inset: 0;
   height: 100vh;
   width: 100%;
+  background-color: rgb(55, 55, 55);
 }
 .content {
   z-index: 1;
@@ -109,19 +111,25 @@
 }
 
 /* navbar */
-.navbar {
+.navbar-holder {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 3;
   display: flex;
+  justify-content: center;
+  margin-top: 2%;
+}
+.navbar {
+  display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px 4%;
   background: rgba(8, 8, 10, 0.35);
+  border-radius: 56px;
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 .navbar-brand {
   font-weight: 700;

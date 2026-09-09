@@ -11,17 +11,18 @@ export default function App() {
   return (
     <div className="view">
       <div className="robo-bg">
-        <RobotBG onReady={() => setReady(true)} />
+        {<RobotBG onReady={() => setReady(true)} />}
       </div>
+      {!ready && <LoadingScreen visible={!ready} />}
 
-      <LoadingScreen visible={!ready} />
-
-      <div className={`app-shell ${ready ? "app-shell-ready" : ""}`}>
-        <Navbar />
-        <div className="content">
-          <Portfolio />
+      {ready && (
+        <div className={`app-shell ${ready ? "app-shell-ready" : ""}`}>
+          <Navbar />
+          <div className="content">
+            <Portfolio />
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }

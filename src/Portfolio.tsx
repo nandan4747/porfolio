@@ -1,13 +1,14 @@
 // Portfolio.tsx
 import "./App.css";
-import prfoilePic from "./assets/mypfp.jpeg";
+import prfoilePic from "./assets/mypfp.webp";
 import ProjectCard, { type Project } from "./ProjectCard";
 import Reveal from "./Reveal";
 import voice from "./assets/voice.png";
-import chat from "./assets/chatapp2.png";
+import chat from "./assets/chatapp1.png";
 import app from "./assets/s-app.jpg";
 import Typewriter from "./Typewriter";
 import ScrollDownButton from "./ScrollDownButton";
+import FlashyText from "./FlashyText";
 
 const projects: Project[] = [
   {
@@ -85,11 +86,17 @@ const education = [
 export default function Portfolio() {
   return (
     <div className="bg">
-      <section className="hero">
+      <section className="hero" id="hero">
         <p className="hero-line">
-          <Typewriter text="I write code. Sometimes it even runs on the first try." />
+          <Typewriter
+            text="I write code. Sometimes it even runs on the first try."
+            flashyMode={false}
+          />
         </p>
-        And hey there, I'm Nandan.
+        <p>
+          And hey there, I'm{" "}
+          <Typewriter text="Nandan" flashyMode={true} flashyInterval={180} />
+        </p>
         <ScrollDownButton targetId="" />
         to know more.
       </section>
@@ -99,7 +106,9 @@ export default function Portfolio() {
           <img className="pfp" src={prfoilePic} alt="profile picture" />
           <div className="aboutme-info">
             <p className="section-label">About me</p>
-            <p className="my-name">NANDAN KUMAR B K</p>
+            <p className="my-name">
+              <FlashyText text="NANDAN KUMAR B K" interval={280} />
+            </p>
             <p className="aboutme-summary">
               Full-Stack Developer and BCA graduate with hands-on experience in
               Node.js, Java Spring Boot and React. Delivered cloud-deployed,
@@ -112,7 +121,9 @@ export default function Portfolio() {
 
       <section className="section" id="projects">
         <Reveal>
-          <p className="section-label">Projects</p>
+          <p className="section-label">
+            <Typewriter text="Projects" />
+          </p>
           <p className="section-title">Selected work</p>
           <div className="projects-grid">
             {projects.map((p) => (
@@ -124,7 +135,9 @@ export default function Portfolio() {
 
       <section className="section" id="skills">
         <Reveal>
-          <p className="section-label">Skills</p>
+          <p className="section-label">
+            <Typewriter text="Skills" />
+          </p>
           <p className="section-title">Technical toolkit</p>
           <div className="skills-groups">
             {skillGroups.map((group) => (
@@ -143,7 +156,9 @@ export default function Portfolio() {
 
       <section className="section" id="education">
         <Reveal>
-          <p className="section-label">Education</p>
+          <p className="section-label">
+            <Typewriter text="Education" />
+          </p>
           <p className="section-title">Academic background</p>
           <div className="education-list">
             {education.map((e) => (
@@ -159,7 +174,10 @@ export default function Portfolio() {
 
       <section className="section contact-section" id="contact">
         <Reveal>
-          <p className="section-label">Contact</p>
+          <p className="section-label">
+            {" "}
+            <Typewriter text="Contact" />
+          </p>
           <p className="section-title">Get in touch</p>
           <ul className="contacts-list">
             <li>

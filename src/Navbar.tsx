@@ -1,5 +1,6 @@
 // Navbar.tsx
 import { useEffect, useRef, useState } from "react";
+import Typewriter from "./Typewriter";
 
 const links = [
   { id: "about", label: "About" },
@@ -88,20 +89,30 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="navbar">
-      <span className="navbar-brand">NK</span>
-      <ul className="navbar-links">
-        {links.map((l) => (
-          <li key={l.id}>
-            <button
-              className={`navbar-link ${active === l.id ? "navbar-link-active" : ""}`}
-              onClick={() => goTo(l.id)}
-            >
-              {l.label}
-            </button>
-          </li>
-        ))}
-      </ul>
-    </nav>
+    <div className="navbar-holder">
+      <nav className="navbar">
+        <ul className="navbar-links">
+          {links.map((l) => (
+            <li key={l.id}>
+              <button
+                className={`navbar-link ${active === l.id ? "navbar-link-active" : ""}`}
+                onClick={() => goTo(l.id)}
+              >
+                {l.id === active ? (
+                  <Typewriter
+                    text={l.label}
+                    flashyMode={false}
+                    flashyFontSize={15}
+                    showCursor={false}
+                  />
+                ) : (
+                  l.label
+                )}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </div>
   );
 }
