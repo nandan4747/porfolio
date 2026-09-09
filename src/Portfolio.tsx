@@ -33,6 +33,7 @@ const projects: Project[] = [
       "Cross-platform mobile app for real-time slot selection, dynamic scheduling, and role-based access, backed by a scalable ASP.NET + Supabase PostgreSQL API hosted on Render.",
     tech: ["React Native", "ASP.NET", "PostgreSQL"],
     imageUrl: app,
+    url: "https://github.com/nandan4747/SeminarHallBookingSystem_android",
   },
   {
     name: "Jackie Chatbot",
